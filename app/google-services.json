@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "460143593783",
+    "project_id": "eventbooking-123c1",
+    "storage_bucket": "eventbooking-123c1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460143593783:android:3367c60aa9746957b132b2",
+        "android_client_info": {
+          "package_name": "com.dorapallysaiS3027403.eventbooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSbVEpZLv55mozVKgcTiFQmMc_n1h3sjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
