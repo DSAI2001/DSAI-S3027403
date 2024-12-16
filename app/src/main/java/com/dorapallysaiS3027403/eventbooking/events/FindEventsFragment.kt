@@ -105,6 +105,9 @@ fun SelectionEvent(onEventSelected: (event: Event) -> Unit, onProfileClicked: ()
         ) {
 
             Image(
+                modifier = Modifier.clickable {
+                    context.startActivity(Intent(context, ProfileActivity::class.java))
+                },
                 painter = painterResource(id = R.drawable.baseline_account_circle_36),
                 contentDescription = "Profile",
             )
@@ -128,7 +131,7 @@ fun SelectionEvent(onEventSelected: (event: Event) -> Unit, onProfileClicked: ()
 
                         val intent = Intent(context, LoginActivity::class.java)
                         context.startActivity(intent)
-                         context.finish()
+                        context.finish()
                     }
                     .padding(start = 8.dp) // Optional spacing // Optional spacing
 
@@ -302,7 +305,252 @@ fun getEvents(): List<Event> {
             eventlocation = "On campus",
             eventimage = R.drawable.event,
             category = "Business & Enterprise"
-        )
+        ),
+        Event(
+            eventname = "Campus visit",
+            eventdescription = "Take a guided tour of the campus including the library, Students' Union and teaching spaces. Speak to an expert from our student recruitment and / or accommodation team and hear about life at Teesside University from a current student. And we can arrange a one-to-one with an academic about the course you're interested in.\n" +
+                    "\n" +
+                    "Programme\n" +
+                    "\n" +
+                    "12.45pm - 1.00pm Arrival and registration\n" +
+                    "1.00pm – 1.30pm Welcome presentation\n" +
+                    "1.30pm – 2.15pm Campus tour\n" +
+                    "2.15pm – 2.45pm Chat to academic staff, accommodation or student recruitment (optional)\n" +
+                    "2.45pm – 3.00pm Questions and close\n" +
+                    "\n",
+            eventdate = "11-12-2024",
+            eventtime = "1.00pm - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Campus visits",
+            eventdescription = "Take a guided tour of the campus including the library, Students' Union and teaching spaces. Speak to an expert from our student recruitment and / or accommodation team and hear about life at Teesside University from a current student. And we can arrange a one-to-one with an academic about the course you're interested in.\n" +
+                    "\n" +
+                    "Programme\n" +
+                    "\n" +
+                    "12.45pm - 1.00pm Arrival and registration\n" +
+                    "1.00pm – 1.30pm Welcome presentation\n" +
+                    "1.30pm – 2.15pm Campus tour\n" +
+                    "2.15pm – 2.45pm Chat to academic staff, accommodation or student recruitment (optional)\n" +
+                    "2.45pm – 3.00pm Questions and close\n" +
+                    "\n",
+            eventdate = "08-01-2025",
+            eventtime = "1.00pm - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Undergraduate open day",
+            eventdescription = "If you're considering studying at Teesside University, come and visit us – it’s the best way to find out if it’s the right university for you.\n" +
+                    "\n" +
+                    "At the open day you can find out about the course(s) you’re interested in by chatting to our tutors and students and attending subject-specific talks and facility tours. It’s a great opportunity to get the information you need.\n" +
+                    "\n" +
+                    "Student finance, the Students' Union and disability services will be on hand to offer advice and support all day. You’ll also have the option to tour our campus, view our accommodation and meet our staff and students.\n" +
+                    "\n" +
+                    "When you arrive our friendly team of helpers will make sure you find your way. Look out for us in our blue t-shirts and hoodies. Free parking is available.\n" +
+                    "\n" +
+                    "Family and friends are welcome to join you.\n" +
+                    "\n" +
+                    "See you soon!",
+            eventdate = "18-01-2025",
+            eventtime = "9.00am - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Postgraduate open day",
+            eventdescription = "If you're considering studying at Teesside University, come and visit us – it’s the best way to find out if it’s the right university for you.\n" +
+                    "\n" +
+                    "At the open day you can find out about the course(s) you’re interested in by chatting to our tutors and students and attending subject-specific talks and facility tours. It’s a great opportunity to get the information you need.\n" +
+                    "\n" +
+                    "Student finance, the Students' Union and disability services will be on hand to offer advice and support all day. You’ll also have the option to tour our campus, view our accommodation and meet our staff and students.\n" +
+                    "\n" +
+                    "When you arrive our friendly team of helpers will make sure you find your way. Look out for us in our blue t-shirts and hoodies. Free parking is available.\n" +
+                    "\n" +
+                    "Family and friends are welcome to join you.\n" +
+                    "\n" +
+                    "See you soon!\n" +
+                    "\n",
+            eventdate = "18-01-2025",
+            eventtime = "9.00am - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Doctorate in clinical psychology webinar",
+            eventdescription = "Join us online for our Doctorate in clinical psychology webinar.\n" +
+                    "\n" +
+                    "\n" +
+                    "Our webinars provide you with the opportunity to hear directly from key academic staff involved in the delivery of our courses. In addition to an overview of what our programme involves, you will find out about the modules delivered, how the course is assessed, and you can submit your questions for us to answer live.\n" +
+                    "\n" +
+                    "\n" +
+                    "Click the booking link to register for the webinar.",
+            eventdate = "23-01-2025",
+            eventtime = "4.00pm - 5.15pm",
+            eventlocation = "On campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Pencils and pixels - careers in creative and digital arts",
+            eventdescription = "Do you want to understand the difference between creating game worlds or adding movement to objects in that world? Or how concept artists design the props and environments for a story while an illustrator brings the story to life?\n" +
+                    "\n" +
+                    "Through immersive experiences, you are introduced to our range of creative courses, get advice from those working in the industry and understand how to build your portfolio.\n" +
+                    "\n",
+            eventdate = "05-02-2025",
+            eventtime = "9.30am - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Campus visits",
+            eventdescription = "Take a guided tour of the campus including the library, Students' Union and teaching spaces. Speak to an expert from our student recruitment and / or accommodation team and hear about life at Teesside University from a current student. And we can arrange a one-to-one with an academic about the course you're interested in.\n" +
+                    "\n" +
+                    "Programme\n" +
+                    "\n" +
+                    "12.45pm - 1.00pm Arrival and registration\n" +
+                    "1.00pm – 1.30pm Welcome presentation\n" +
+                    "1.30pm – 2.15pm Campus tour\n" +
+                    "2.15pm – 2.45pm Chat to academic staff, accommodation or student recruitment (optional)\n" +
+                    "2.45pm – 3.00pm Questions and close\n" +
+                    "\n",
+            eventdate = "05-02-2025",
+            eventtime = "1.00pm - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Campus visits",
+            eventdescription = "Take a guided tour of the campus including the library, Students' Union and teaching spaces. Speak to an expert from our student recruitment and / or accommodation team and hear about life at Teesside University from a current student. And we can arrange a one-to-one with an academic about the course you're interested in.\n" +
+                    "\n" +
+                    "Programme\n" +
+                    "\n" +
+                    "12.45pm - 1.00pm Arrival and registration\n" +
+                    "1.00pm – 1.30pm Welcome presentation\n" +
+                    "1.30pm – 2.15pm Campus tour\n" +
+                    "2.15pm – 2.45pm Chat to academic staff, accommodation or student recruitment (optional)\n" +
+                    "2.45pm – 3.00pm Questions and close\n" +
+                    "\n",
+            eventdate = "19-02-2025",
+            eventtime = "1.00pm - 3.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Discover science",
+            eventdescription = "Our science discovery days give the opportunity to attend two subject sessions from the following:\n" +
+                    "> biology\n" +
+                    "> biomedical science\n" +
+                    "> environmental science\n" +
+                    "> food and nutrition\n" +
+                    "> geography\n" +
+                    "> pharmaceutical science.\n" +
+                    "\n" +
+                    "Sessions are curriculum linked and could include:\n" +
+                    "> antibiotic resistance and the Kirby-Bauer test\n" +
+                    "> environmental distribution\n" +
+                    "> nuclear magnetic resonance\n" +
+                    "> trace metal solutions.",
+            eventdate = "05-03-2025",
+            eventtime = "10.15am - 2.30pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "English round-table masterclass",
+            eventdescription = "Students work directly with academic staff on themes and topics from the A level syllabus. The discussions focus on sources, debate, building skills and confidence and supporting student attainment.\n" +
+                    "\n" +
+                    "Topics available include:\n" +
+                    "> Analysing poetry and prose\n" +
+                    "> Developing your authorial voice\n" +
+                    "> Exam revision - women in dystopian fiction\n" +
+                    "> Exam revision - Dracula in literature.",
+            eventdate = "05-03-2025",
+            eventtime = "4.00pm - 6.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Life, death and forensic science conference",
+            eventdescription = "What can we discover from a skeleton?How does forensic genetics help us solve wildlife crime? What does blood spatter tell us about a crime scene? Through practical sessions, understand how advances in technology are helping those working in the legal and justice system catch the criminals.",
+            eventdate = "25-03-2025",
+            eventtime = "9.30am - 3.30pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "History and politics round-table masterclass",
+            eventdescription = "Students work directly with academic staff on themes and topics from the A level syllabus. The discussions focus on sources, debate, building skills and confidence and supporting student attainment.\n" +
+                    "\n" +
+                    "Topics available include:\n" +
+                    "> British political parties\n" +
+                    "> reformation England\n" +
+                    "> the French Revolution\n" +
+                    "> Russia in the 20th Century\n" +
+                    "> the rise of the Nazi’s and Hitler’s Germany\n" +
+                    "> the USA - 1972 to present day\n" +
+                    "> women and gender in politics.\n" +
+                    "\n",
+            eventdate = "26-03-2025",
+            eventtime = "4.00pm - 6.00pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Supporting progression conference",
+            eventdescription = "For post-16 teachers and careers advisers\n" +
+                    "\n" +
+                    "We bring together a range of experts to provide you with the most up-to-date information and guidance for approaching\n" +
+                    "today’s current issues in further and higher education.\n" +
+                    "\n" +
+                    "April 2024 saw us welcome keynote speakers from UCAS and IDP Connect. Hannah Simnett from Connection Counts delivered a fantastic session on forming connections with your students and Jonny Richardson from GECKO took us on a fascinating journey to understand the impact of AI and ChatGPT in education.\n" +
+                    "\n" +
+                    "Join us to understand how you can support students in your role.",
+            eventdate = "02-04-2025",
+            eventtime = "9.15am - 3.30pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Nursing and midwifery conference",
+            eventdescription = "Celebrate international nurses day with us.\n" +
+                    "\n" +
+                    "What does a career in nursing or midwifery look like? Hear from key speakers from a range of clinical practices to gain an insight into their roles, and how they care for their patients. Sessions could include topics such as maternity delivery, cardiac arrest and dementia.",
+            eventdate = "07-05-2025",
+            eventtime = "9.30am - 3.30pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
+        Event(
+            eventname = "Why fairness matters - ensuring justice in law and policing",
+            eventdescription = "Through practical and engaging sessions, explore topics linked to the curriculum. Debate and discuss many areas of the law and the legal system in the UK and understand the types of topics you might study at university including:\n" +
+                    "\n" +
+                    "> a fair cop in custody\n" +
+                    "> equality of arms: the crucial role of cross-examination\n" +
+                    "> fairness in fingerprints – mistakes and\n" +
+                    "miscarriages\n" +
+                    "> just and effective bail applications\n" +
+                    "> unfair trials and unfit defendants.",
+            eventdate = "18-06-2025",
+            eventtime = "9.30am - 2.30pm",
+            eventlocation = "On campus, Middlesbrough Campus",
+            eventimage = R.drawable.event,
+            category = "Visiting & Open Days"
+        ),
     )
 }
 

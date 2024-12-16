@@ -196,6 +196,7 @@ private fun signInWithuseremail(useremail: String, userpassword: String, context
 fun saveUserDetails(user: UserData, context: Context) {
     UserDetails.saveUserLoginStatus(context = context, true)
     UserDetails.saveName(context, user.fullName)
+    UserDetails.saveGender(context,user.gender)
     UserDetails.saveEmail(context, user.email)
 }
 
