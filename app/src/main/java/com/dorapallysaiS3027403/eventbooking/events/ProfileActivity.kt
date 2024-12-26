@@ -1,6 +1,7 @@
 package com.dorapallysaiS3027403.eventbooking.events
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -129,6 +130,7 @@ fun ProfileScreen() {
 
         Button(
             onClick = {
+                context.startActivity(Intent(context, MyEventsActivity::class.java))
 
             },
             modifier = Modifier

@@ -7,5 +7,12 @@ data class Event(
     val eventtime: String = "",
     val eventlocation: String = "",
     val eventimage: Int = 0,
-    val category: String = ""
+    val category: String = "",
+    val eventId : Int =0,
+    var dateOfBooking : String = "",
+    val weeksBooked : String = "",
+    var guestName : String = "",
+    var guestEmail : String = "",
+    var companyName : String = "",
+    var jobTitle : String = ""
 )

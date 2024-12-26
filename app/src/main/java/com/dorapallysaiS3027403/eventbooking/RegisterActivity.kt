@@ -302,9 +302,10 @@ private fun saveUserData(userData: UserData, context: Activity) {
 }
 
 fun isValidUsername(username: String): Boolean {
-    val regex = "^[a-zA-Z]+$".toRegex()
-    return !regex.matches(username)
+    val regex = "^[a-zA-Z]*$".toRegex() // Matches only alphabets, excluding spaces and other characters
+    return regex.matches(username)
 }
+
 
 fun isValidEmail(email: String): Boolean {
     val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$".toRegex()

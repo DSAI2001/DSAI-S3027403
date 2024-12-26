@@ -241,7 +241,8 @@ fun getEvents(): List<Event> {
             eventtime = "4.00pm - 5.00pm",
             eventlocation = "Online",
             eventimage = R.drawable.event,
-            category = "Alumni"
+            category = "Alumni",
+            eventId =  1
         ),
         Event(
             eventname = "Business breakfast - accessing student talent",
@@ -256,7 +257,8 @@ fun getEvents(): List<Event> {
             eventtime = "7.30am - 9.30am",
             eventlocation = "On campus",
             eventimage = R.drawable.event,
-            category = "Alumni"
+            category = "Alumni",
+            eventId =  2
         ),
         Event(
             eventname = "Digital Accounting & Finance Manager Degree Apprenticeship Webinar",
@@ -265,7 +267,8 @@ fun getEvents(): List<Event> {
             eventtime = "10.00am - 11.00am",
             eventlocation = "Online",
             eventimage = R.drawable.event,
-            category = "Business & Enterprise"
+            category = "Business & Enterprise",
+            eventId =  3
         ),
         Event(
             eventname = "Business breakfast - accessing student talent",
@@ -280,7 +283,8 @@ fun getEvents(): List<Event> {
             eventtime = "7.30am - 9.30am",
             eventlocation = "On campus",
             eventimage = R.drawable.event,
-            category = "Business & Enterprise"
+            category = "Business & Enterprise",
+            eventId =  4
         ),
         Event(
             eventname = "Business breakfast - work skills development",
@@ -291,7 +295,8 @@ fun getEvents(): List<Event> {
             eventtime = "7.30am - 10.00am",
             eventlocation = "On campus",
             eventimage = R.drawable.event,
-            category = "Business & Enterprise"
+            category = "Business & Enterprise",
+            eventId =  5
         ),
         Event(
             eventname = "Business breakfast - research and innovation",
@@ -304,7 +309,8 @@ fun getEvents(): List<Event> {
             eventtime = "7.30am - 10.00am",
             eventlocation = "On campus",
             eventimage = R.drawable.event,
-            category = "Business & Enterprise"
+            category = "Business & Enterprise",
+            eventId =  6
         ),
         Event(
             eventname = "Campus visit",
@@ -322,7 +328,8 @@ fun getEvents(): List<Event> {
             eventtime = "1.00pm - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  7
         ),
         Event(
             eventname = "Campus visits",
@@ -340,7 +347,8 @@ fun getEvents(): List<Event> {
             eventtime = "1.00pm - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  8
         ),
         Event(
             eventname = "Undergraduate open day",
@@ -359,7 +367,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.00am - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  9
         ),
         Event(
             eventname = "Postgraduate open day",
@@ -379,7 +388,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.00am - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  10
         ),
         Event(
             eventname = "Doctorate in clinical psychology webinar",
@@ -394,7 +404,8 @@ fun getEvents(): List<Event> {
             eventtime = "4.00pm - 5.15pm",
             eventlocation = "On campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  11
         ),
         Event(
             eventname = "Pencils and pixels - careers in creative and digital arts",
@@ -406,7 +417,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.30am - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  12
         ),
         Event(
             eventname = "Campus visits",
@@ -424,7 +436,8 @@ fun getEvents(): List<Event> {
             eventtime = "1.00pm - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  13
         ),
         Event(
             eventname = "Campus visits",
@@ -442,7 +455,8 @@ fun getEvents(): List<Event> {
             eventtime = "1.00pm - 3.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  14
         ),
         Event(
             eventname = "Discover science",
@@ -463,7 +477,8 @@ fun getEvents(): List<Event> {
             eventtime = "10.15am - 2.30pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  15
         ),
         Event(
             eventname = "English round-table masterclass",
@@ -478,7 +493,8 @@ fun getEvents(): List<Event> {
             eventtime = "4.00pm - 6.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  16
         ),
         Event(
             eventname = "Life, death and forensic science conference",
@@ -487,7 +503,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.30am - 3.30pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  17
         ),
         Event(
             eventname = "History and politics round-table masterclass",
@@ -506,7 +523,8 @@ fun getEvents(): List<Event> {
             eventtime = "4.00pm - 6.00pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  18
         ),
         Event(
             eventname = "Supporting progression conference",
@@ -522,7 +540,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.15am - 3.30pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  19
         ),
         Event(
             eventname = "Nursing and midwifery conference",
@@ -533,7 +552,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.30am - 3.30pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  20
         ),
         Event(
             eventname = "Why fairness matters - ensuring justice in law and policing",
@@ -549,7 +569,8 @@ fun getEvents(): List<Event> {
             eventtime = "9.30am - 2.30pm",
             eventlocation = "On campus, Middlesbrough Campus",
             eventimage = R.drawable.event,
-            category = "Visiting & Open Days"
+            category = "Visiting & Open Days",
+            eventId =  21
         ),
     )
 }
