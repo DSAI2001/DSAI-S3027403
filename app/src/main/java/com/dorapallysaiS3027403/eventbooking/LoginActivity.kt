@@ -59,8 +59,6 @@ fun LoginScreen() {
 
     val context = LocalContext.current as Activity
 
-//    val context = LocalContext.current
-
 
     Column(
         modifier = Modifier
@@ -144,7 +142,6 @@ fun LoginScreen() {
                 text = "Register Now",
                 style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Black),
                 modifier = Modifier.clickable {
-                    // Intent to open RegisterActivity
                     context.startActivity(Intent(context, RegisterActivity::class.java))
                     context.finish()
                 }
@@ -183,10 +180,9 @@ private fun signInWithuseremail(useremail: String, userpassword: String, context
                 Toast.makeText(context, "No user data found", Toast.LENGTH_SHORT).show()
             }
         } else {
-            // Data retrieval failed
             Toast.makeText(
                 context,
-                "Failed to retrieve user data: ${task.exception?.message}",
+                "Task Failed",
                 Toast.LENGTH_SHORT
             ).show()
         }

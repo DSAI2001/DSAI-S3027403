@@ -154,7 +154,7 @@ fun EventDetails() {
 
                 Image(
                     painter = painterResource(id = R.drawable.baseline_location_on_24),
-                    contentDescription = "Location",
+                    contentDescription = "Pin",
                 )
                 Spacer(modifier = Modifier.width(4.dp))
 

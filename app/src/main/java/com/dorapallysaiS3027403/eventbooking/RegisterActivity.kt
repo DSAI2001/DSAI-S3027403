@@ -287,7 +287,7 @@ private fun saveUserData(userData: UserData, context: Activity) {
             } else {
                 Toast.makeText(
                     context,
-                    "User Registration Failed: ${task.exception?.message}",
+                    "Account Registration Failed",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -295,7 +295,7 @@ private fun saveUserData(userData: UserData, context: Activity) {
         .addOnFailureListener { exception ->
             Toast.makeText(
                 context,
-                "User Registration Failed: ${exception.message}",
+                "Account Registration Failed",
                 Toast.LENGTH_SHORT
             ).show()
         }
