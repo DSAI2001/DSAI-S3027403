@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.dorapallysaiS3027403.eventbooking"
+    namespace = "appS3027403.dorapallysai.eventbooking"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.dorapallysaiS3027403.eventbooking"
+        applicationId = "appS3027403.dorapallysai.eventbooking"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
