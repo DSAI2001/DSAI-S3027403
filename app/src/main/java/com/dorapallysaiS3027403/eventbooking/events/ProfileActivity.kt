@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -146,22 +147,33 @@ fun ProfileScreen() {
             )
         }
 
-        Button(
-            onClick = {
+//        Button(
+//            onClick = {
+//
+//            },
+//            modifier = Modifier
+//                .width(300.dp)
+//                .align(Alignment.CenterHorizontally)
+//                .padding(top = 4.dp),
+//            shape = RoundedCornerShape(8.dp)
+//        ) {
+//            Text(
+//                "Contact Event Support",
+//                fontWeight = FontWeight.Bold,
+//                fontSize = 20.sp
+//            )
+//        }
 
-            },
-            modifier = Modifier
-                .width(300.dp)
-                .align(Alignment.CenterHorizontally)
-                .padding(top = 4.dp),
-            shape = RoundedCornerShape(8.dp)
-        ) {
-            Text(
-                "Contact Event Support",
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
-            )
-        }
+        Spacer(modifier = Modifier.weight(1f))
+        Text(
+            modifier = Modifier.padding(horizontal = 12.dp),
+            text = "Using dorapally sai Event Booking mobile app events in Teesside university can be seen and booked very easily.",
+            fontWeight = FontWeight.Bold,
+            fontSize = 14.sp,
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(modifier = Modifier.height(30.dp))
 
     }
 

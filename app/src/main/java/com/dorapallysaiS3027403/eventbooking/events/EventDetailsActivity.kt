@@ -2,8 +2,10 @@ package com.dorapallysaiS3027403.eventbooking.events
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.text.TextUtils.replace
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -45,9 +47,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.workDataOf
 import com.dorapallysaiS3027403.eventbooking.R
 import com.dorapallysaiS3027403.eventbooking.UserDetails
 import com.dorapallysaiS3027403.eventbooking.events.Selectevent.event
@@ -55,8 +61,8 @@ import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.Date
 import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 class EventDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +105,7 @@ fun EventDetails() {
             )
 
         }
+
         Image(
             modifier = Modifier
                 .fillMaxWidth()
@@ -169,6 +176,21 @@ fun EventDetails() {
 
                 )
 
+                if (event.eventlocation != "Online") {
+                    Text(
+                        text = "See Location",
+                        color = Color.Blue,
+                        textAlign = TextAlign.Center,
+                        fontSize = 12.sp,
+                        style = TextStyle(textDecoration = TextDecoration.Underline),
+                        modifier = Modifier
+                            .padding(start = 12.dp, top = 4.dp)
+                            .clickable {
+                                openCampusLocation(context)
+                            }
+                    )
+                }
+
 
             }
             Spacer(modifier = Modifier.height(6.dp))
@@ -219,7 +241,7 @@ fun EventDetails() {
                     fontSize = 16.sp,
                 )
             }
-            
+
             Spacer(modifier = Modifier.height(18.dp))
 
             BookNowCard(event)
@@ -309,16 +331,15 @@ fun BookNowCard(event: Event) {
 
             Button(
                 onClick = {
-                    if(name.isEmpty() || company.isBlank() || email.isBlank() || jobTitle.isBlank())
-                    {
-                        Toast.makeText(context,"Fields Missing",Toast.LENGTH_SHORT).show()
-                    }else{
+                    if (name.isEmpty() || company.isBlank() || email.isBlank() || jobTitle.isBlank()) {
+                        Toast.makeText(context, "Fields Missing", Toast.LENGTH_SHORT).show()
+                    } else {
                         event.guestName = name
                         event.companyName = company
                         event.guestEmail = email
                         event.jobTitle = jobTitle
 
-                        bookEvent(event,context)
+                        bookEvent(event, context)
                     }
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -373,7 +394,7 @@ private fun bookEvent(event: Event, context: Context) {
 
     val currentDate = LocalDate.now() // Get today's date
     val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy") // Define the format
-    event.dateOfBooking=currentDate.format(formatter) // Format the date
+    event.dateOfBooking = currentDate.format(formatter) // Format the date
 
 
     val orderId = event.eventId.toString()
@@ -384,6 +405,7 @@ private fun bookEvent(event: Event, context: Context) {
         .addOnCompleteListener { task ->
             if (task.isSuccessful) {
 
+                scheduleEventNotification(event.eventdate, event.eventname, context)
                 (context as Activity).finish()
                 Toast.makeText(context, "Booked Successfully", Toast.LENGTH_SHORT).show()
             } else {
@@ -402,3 +424,43 @@ private fun bookEvent(event: Event, context: Context) {
             ).show()
         }
 }
+
+fun openCampusLocation(context: Context) {
+    val uri = Uri.parse("geo:0,0?q=Teesside+University")
+    val intent = Intent(Intent.ACTION_VIEW, uri).apply {
+        setPackage("com.google.android.apps.maps")
+    }
+
+    if (intent.resolveActivity(context.packageManager) != null) {
+        context.startActivity(intent)
+    } else {
+        Toast.makeText(context, "Google Maps app not installed.", Toast.LENGTH_SHORT).show()
+    }
+}
+
+fun scheduleEventNotification(eventDate: String, eventName: String, context: Context) {
+
+    val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+    val eventDateParsed = dateFormat.parse(eventDate)
+
+    val currentTime = System.currentTimeMillis()
+
+    if (eventDateParsed != null && eventDateParsed.time > currentTime) {
+        val timeDelay = eventDateParsed.time - currentTime
+
+        val workRequest = OneTimeWorkRequestBuilder<NotificationWorker>()
+            .setInitialDelay(timeDelay, TimeUnit.MILLISECONDS) // Set delay based on the event time
+            .setInputData(workDataOf("event_name" to eventName)) // Pass event name
+            .build()
+
+        WorkManager.getInstance(context).enqueue(workRequest)
+    } else {
+
+        Toast.makeText(context,"Event Completed",Toast.LENGTH_SHORT).show()
+        Log.d("EventNotification", "Event is in the past, no notification scheduled.")
+    }
+}
+
+
+
+
